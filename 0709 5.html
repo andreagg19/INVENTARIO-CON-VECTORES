@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+</head>
+<style>
+    *{
+        background-color:rgb(255, 255, 255);
+    }
+    input{
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(0, 0, 0);
+        margin: 5px 0px 5px 0px;
+        padding: 7px 0px 7px 0px;
+    }
+    .entrada
+    {
+        width: 100%;
+        border: 2px;
+        border-color: rgb(255, 0, 93);
+        border-style: solid;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+    }
+    .boton
+    {
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        border-style: solid;
+        border-color: rgb(255, 0, 93);
+        background-color:rgb(253, 159, 255);
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .boton:hover{
+            transition-duration: 0.6s;
+            cursor: pointer;
+            background-color:rgb(227, 17, 174);
+        }
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+
+    .contenido 
+    {
+        color: rgb(0, 0, 0);
+        font-family: 'Montserrat', sans-serif; 
+        text-align: center;
+        top: 50%;
+        border: 4px solid rgb(255, 0, 93);
+        border-radius: 20px;
+        background-color: rgb(255, 159, 255);
+        justify-content: center;
+        padding: 10px;
+
+        font-size:50px;
+        letter-spacing:0.1em;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        text-shadow: 
+                    4px 4px #ffffff;
+    }
+    .txt{
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+    }
+</style>
+<body>
+    <p class="contenido">I N V E N T A R I O</p>
+    <label for="nombre" class="txt">Nombre:</label><br>
+    <input class="entrada" type="text" id="nombre"><br>
+
+    <label for="codigo" class="txt">Codigo:</label><br>
+    <input class="entrada" type="text" id="codigo"><br>
+
+    <label for="cantidad" class="txt">Cantidad:</label><br>
+    <input class="entrada" type="text" id="cantidad"><br>
+
+    <label for="costo" class="txt">Costo:</label><br>
+    <input class="entrada" type="text" id="costo"><br>
+
+    <label for="buscar" class="txt">Busqueda:</label><br>
+    <input class="entrada" type="text" id="busqueda"><br>
+
+    <button class="boton" id="add"> Agregar </button>
+    <button class="boton" id="delete"> Eliminar </button>
+    <button class="boton" id="buscar"> Buscar </button>
+    <button class="boton" id="list"> Listado </button>
+    <button class="boton" id="listin"> Listado inverso </button>
+
+    <div>
+        <h1>Productos</h1>
+        <ul id="inventory"></ul>
+    </div>
+
+    <script src="invetario.js"></script>
+</body>
+</html>
