@@ -100,6 +100,98 @@
         <ul id="inventoryy"></ul>
     </div>
 
-    <script src="invetario.js"></script>
+    <script>
+        class Inventory{
+            constructor(){
+            this.products = [];
+            }
+
+            add(product){
+            this.products.push(product);
+            }
+
+            search(codigo){
+            let proen = this.products.codigo;
+            for(let f = 0; f < this.products.length; f++){
+                if (this.products[f].codigo == codigo){
+                    return this.products[f];
+                }
+            }
+        }
+
+            lista(){
+            let listt = ' ';
+            for (let x = 0; x < this.products.length; x++) {
+                listt += this.products[x].info();
+            }
+            return listt;
+            }
+
+            listin(){
+            let listtin = ' ';
+            for (let b = this.products.length-1; b >= 0; b--) {
+                listtin += this.products[b].info();
+            }
+            return listtin;
+        }
+    }
+
+        class Product{
+            constructor(nombre, codigo, cantidad, costo){
+            this.nombre = nombre;
+            this.codigo = codigo;
+            this.cantidad = cantidad;
+            this.costo = costo
+            }
+
+            nombre(){
+                return this.nombre;
+            }
+            codigo(){
+                return this.codigo;
+            }
+            cantidad(){
+                return this.cantidad;
+            }
+            costo(){
+                return this.costo
+            }
+
+            info(){
+            return "nombre: " + this.nombre + ", codigo: " + this.codigo + ", cantidad: " + 
+            this.cantidad + ", costo: " + this.costo;
+            }
+        }
+
+        let inventory = new Inventory();
+        let addp = document.getElementById('add');
+
+        addp.addEventListener('click', () => {
+            let nombre = document.getElementById('nombre').value;
+            let codigo = document.getElementById('codigo').value;
+            let cantidad = document.getElementById('cantidad').value;
+            let costo = document.getElementById('costo').value;
+            let product = new Product (nombre, codigo, cantidad, costo);
+            let savepro = inventory.add(product);
+            document.getElementById('inventoryy').InnerHTML = '<p>Product added</p>'
+        })
+
+        let searchp = document.getElementById('search');
+        searchp.addEventListener('click', () => {
+            let code = document.getElementById('busqueda').value;
+            let producttt = inventory.search(code);
+            document.getElementById('inventoryy').innerHTML += producttt.info();
+        })
+
+        let listp = document.getElementById('list');
+        listp.addEventListener('click',()=>{
+            document.getElementById('inventoryy').innerHTML += inventory.lista();
+        })
+
+        let listinp = document.getElementById('listin');
+        listinp.addEventListener('click',() => {
+            document.getElementById('inventoryy').innerHTML += inventory.listin();
+        })
+    </script>
 </body>
 </html>
